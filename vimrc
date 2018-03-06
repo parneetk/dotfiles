@@ -12,6 +12,7 @@ set copyindent		" Copy the previous indentation on autoindenting
 set shiftround		" Use multiple of shiftwidth when indenting with '<' and '>'
 set smarttab		" Insert tabs according to shiftwidth
 set backspace=indent,eol,start	" Allow backspacing over indention, line breaks and insertion start
+set textwidth=80    " A line can have upto 80 characters
 
 " Last line
 set showcmd			" Display command being typed on the last line
