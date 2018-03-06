@@ -1,0 +1,29 @@
+#we know
+startup_message off
+vbell" off"
+# if we accidentally hangup, don't be all attached when we come back. :P
+autodetach on
+
+# more scrollbacks!
+defscrollback 10000
+
+# disable use of the "alternate" terminal allowing scrollbars 
+termcapinfo xterm\* ti@:te@
+
+# have screen update terminal emulators titlebar
+termcapinfo xterm\* 'hs:ts=\\E]0;:fs=\\007:ds=\\E]0;\\007'
+defhstatus "screen ^E (^Et) \| $USER@^EH"
+
+#default shell title. for bash, place in .bashrc to update titles to current running program:
+# export PS1='\\[\\033k\\033\\\\\\]\\u@\\h:\\w\\$ '
+shelltitle "$ \|bash"
+
+# setup screen
+screen -t 'jupyter notebook' 0 bash # make first screen for running jupyter notebook
+screen -t 'workspace' 1 bash # make screen for general work
+select 1 # switch to workspace
+
+# Display the status line at the bottom
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.kW}%-w%{.bW}%t [%n]%{-}%+w %=%{..G} %H %{..Y} %Y/%m/%d %c"
