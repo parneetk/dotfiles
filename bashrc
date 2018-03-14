@@ -177,3 +177,9 @@ numfiles-all() {
     echo "$N files in $1";
   fi
 }
+
+# chenge color to get rid of dark blue color
+LS_COLORS='rs=0:di=1;35:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;
+export LS_COLORS
+# change prompt format
+PS1='\e[37;1m\u@\e[35m\W\e[0m\$ '
